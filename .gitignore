@@ -1,3 +1,13 @@
+# My ignores
+*.pdf
+
+# Word temp files
+~$*.docx
+
+
+#___________________________
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
