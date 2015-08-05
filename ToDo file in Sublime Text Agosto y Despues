@@ -1,4 +1,13 @@
 ids ya chekeados manualmente: 1-2005 y 7324-7737
+last:
+	acabo de lograr que el output de la web se corra desde exec.php... y crea otro archivo con el export de la web correcto.
+	..ver que falta hacer..
+	falta pasar eso a un csv con header text,_class_  .. luego pasarlo a .arff
+
+
+El informe debe ser escrito en tiempo presente, usando tercera persona
+singular
+- ver como escribio el informe el FF
 
 
 todo's:
