@@ -1,5 +1,10 @@
 ids ya chekeados manualmente: 1-2005 y 7324-7737
-last:
+
+TODO:
+	en 3.1, escribi un caso de uso donde se puede exportar de la web a Documentacion API corregida que destaca directivas.
+			...pero esto no está implementado ni mencionado en otra parte del informe. Mencionar el diseño optimo en otra parte
+			del informe.
+	
 
 
 El informe debe ser escrito en tiempo presente, usando tercera persona
@@ -30,23 +35,15 @@ _________________________________
 PARTES PENDIENTES DEL DESARROLLO
 ----
 1)	Extraer comentarios
-	1.1)*	extraer todos los comentarios
 	1.2)*	(asignar cada comentario a su archivo,clase,posicion dentro de archivo, etc)
-	1.3)	separar por frases
-	1.4)	crear .csv (pues lo usa index.html)
 2)	Revision Manual en pagina web
 	2.?)*	Elección de tipos o clases de comentarios (ej. directive, non-directive, null-directive)
 3)	Exportar resultados
-	3.1)	Juntar output .csv de index.html con el .csv original usado por la webpage
-	3.2)	Crear .arff a partir del .csv final (util para utilizar ML despues)
-	...
+	--listo--
 
 
 
 
-
-ids issues:
-	8374	-	 Frase aparece varias veces (mas de 15) Constructor that performs no validation. Use getInstance if you want that.			algo de overfitting!
 
 
 
@@ -69,7 +66,6 @@ tokenizer01:
 tokenizer02: 
  	.,;:'"()?!#<>$&{}+
 
-stopwords! ::::: quizas sea necesario quitarle al archivo de SWords las palabras del select_de_weka (archivo attr_select_result_01)
 
 probar con 10 atributos
 leer sobre string to word vector filter
@@ -115,6 +111,8 @@ notas del 1er archivo analizado:
 	workaround
 			ejemplo: Workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=23980 : Shells without borders are not resizable on GTK.
 	'immutable' podria ser keyword
+	'side effect' podria ser keyword
+	'has/need to be' podria ser keyword
 	
 
 	should   podria no ser una directiva. al parecer hay varias frases no directivas que si tienen la palabra should
@@ -192,3 +190,19 @@ Comment Classifier
 Comments Highlighter (CHI o CHi)
 Jah Api Highlighter (JAH)
 Java Api Highlighter (JAH)
+
+
+secciones a revisar por Romain:
+
+
+
+2648-2 tiene un typpo.. corregir antes de pasar a weka!
+3511-2 y 3556-2 tiene un typpo.. corregir antes de pasar a weka! 
+3167-3 es un ejemplo de semi-directive (es un consejo)
+
+mejoras			q en el fut   la app lea javadoc en vez de html para mostrar los @link
+mejora 			q el usuario pueda costumizar sus keywords
+hablar de que se intento mantener consistencia al marcar frases... tratando de no hacer ejemplos contradictorios... quizas poner un ejemplo de
+		algunas consistencias q teniamos en mente con null o deprecated
+
+
