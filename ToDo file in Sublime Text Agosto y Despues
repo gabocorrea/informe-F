@@ -5,8 +5,6 @@ TODO:
 			...pero esto no está implementado ni mencionado en otra parte del informe. Mencionar el diseño optimo en otra parte
 			del informe.
 	
-
-
 El informe debe ser escrito en tiempo presente, usando tercera persona
 singular
 - ver como escribio el informe el FF
@@ -206,3 +204,25 @@ hablar de que se intento mantener consistencia al marcar frases... tratando de n
 		algunas consistencias q teniamos en mente con null o deprecated
 
 
+last:  al final de 5.3
+
+
+    a    b    c    d   <-- classified as
+ 1000    0    0   11 |    a = non-directive
+   10   90    5    3 |    b = directive
+    2    1   94    1 |    c = semi-directive
+   26    0    0   50 |    d = null-directive
+
+    a    b   <-- classified as
+ 1000   15 |    a = non-directive
+   15   85 |    b = directive
+
+recall:
+   85-100		bueno
+   70-85		regular
+   50-70		malo
+
+presicion:
+	85-100		bueno
+	70-85		regular
+	50-70		malo
