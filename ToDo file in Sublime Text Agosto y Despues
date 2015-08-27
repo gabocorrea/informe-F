@@ -1,5 +1,21 @@
 ids ya chekeados manualmente: 1-2005 y 7324-7737
 
+
+FALTA:
+	1 - terminar resultados (4 horas)
+	2 - correcciones de romain (3 horas)
+	3 - marco teórico (5 horas)
+	4 - Introduccion (2 horas)
+	5 - Resumen (1.5 horas)
+	6 - Bibliografía (2 horas)
+	7 - Conclusiones y Glosario (2 horas)
+	8 - Anexo (2 horas)
+	9 - Imprimir y anillar (2 horas)
+	10 - Revisar errores (1.5 hora)
+	---- total hasta aca: 25 horas
+			TODOS:
+				1 - Revisar numeracion automatica de las tablas e imagenes
+
 TODO:
 	en 3.1, escribi un caso de uso donde se puede exportar de la web a Documentacion API corregida que destaca directivas.
 			...pero esto no está implementado ni mencionado en otra parte del informe. Mencionar el diseño optimo en otra parte
