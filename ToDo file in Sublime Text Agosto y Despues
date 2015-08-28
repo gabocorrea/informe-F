@@ -1,33 +1,26 @@
-ids ya chekeados manualmente: 1-2005 y 7324-7737
-
-
 FALTA:
-	1 - terminar resultados (4 horas)
 	2 - correcciones de romain (3 horas)
-	3 - marco teórico (5 horas)
-	4 - Introduccion (2 horas)
 	5 - Resumen (1.5 horas)
 	6 - Bibliografía (2 horas)
 	7 - Conclusiones y Glosario (2 horas)
 	8 - Anexo (2 horas)
 	9 - Imprimir y anillar (2 horas)
 	10 - Revisar errores (1.5 hora)
-	---- total hasta aca: 25 horas
+	---- total hasta aca: 25 horas (+4h)
+	11 - Diagrama para los casos de uso (1h)
 			TODOS:
 				1 - Revisar numeracion automatica de las tablas e imagenes
+
 
 TODO:
 	en 3.1, escribi un caso de uso donde se puede exportar de la web a Documentacion API corregida que destaca directivas.
 			...pero esto no está implementado ni mencionado en otra parte del informe. Mencionar el diseño optimo en otra parte
 			del informe.
-	
-El informe debe ser escrito en tiempo presente, usando tercera persona
-singular
-- ver como escribio el informe el FF
 
-6.37gb total
+
+
 150Largo,46Ancho,182Alto (cm)
-
+155+20(g.comunes)+30(deuda)+30(cuentas)=235
 
 todo's:
 	add min num lines in comment to consider it .. to 1_...py script   (que sea 4 o mas lineas)
@@ -35,12 +28,8 @@ todo's:
 *	fix problema <li>,<ol>,<ul>,</li>, ...etc al separar por frases usando el script.
 *	linea 554:	tiene mal extraido el texto del comentario... está incompleto ...-> entonces -> dataset.xml no fue correctamente convertido a .csv    ...      linea 11980 ? quizas tambien le pasa lo mismo.... porque tambien su primer valor era un comentario en las comas.
 *	(opcional)	fix bug,que los hotkeys no funcionen al estar escribiendo.
-	probar con un param que indique el numero de directivas de una frase y pasarle eso a weka
 	(GUI)		en index.html hacer que la URL esté con left-justification (actualmente está en el centro y se ve mal). además hacer que no se vea  el #1 o #°n  al final de la URL
 	
-
-
-
 
 
 
@@ -52,13 +41,6 @@ PARTES PENDIENTES DEL DESARROLLO
 	1.2)*	(asignar cada comentario a su archivo,clase,posicion dentro de archivo, etc)
 2)	Revision Manual en pagina web
 	2.?)*	Elección de tipos o clases de comentarios (ej. directive, non-directive, null-directive)
-3)	Exportar resultados
-	--listo--
-
-
-
-
-
 
 
 
@@ -76,80 +58,8 @@ Java:				10405 - 20575
 
 
 
-tokenizer01:
-tokenizer02: 
- 	.,;:'"()?!#<>$&{}+
-
-
-probar con 10 atributos
-leer sobre string to word vector filter
-svm lineal con regularización?? bajar liblinear
-usar un test de 500 instancias.  o   2 tests 
-tokenizer, delimiters
-
-	
-
-
-
-
-
-
-mejora:
-	la regex \binvo.*\b toma incorrectamente la frase 'org.apache.commons.collections.functors.InvokerTransformer'. mejorar la regex
-
-IDEA IMPORTANTE:
-	quizas seria buena idea detectar directivas con keywords, dependiendo del contexto. Si estoy en un tag @param y encuentro null, es directiva (probablemente) porque probablemente diga '...; must not be null'. Si estoy en un comentario de metodo, quizas sea menos probable que es directiva. ... etc (debo buscar mas ejemplos para esta idea aun, tengo poca evidencia)
-
-ideas:
-	la correccion manual de directives es lenta y tediosa. seria mejor correr el programa, que haga highlight a todos los directives segun algun criterio. si luego se ve que hay exceso de highlights, se aumenta el thershold (o algun parametro) que disminuya la cantidad de highlights.
-
-notas del 1er archivo analizado:
-	id 207 - 'backwards compatibility'
-	id 232 - 'static' y 'prevent' no son keywords.. raro quizas que no lo sean
-	*blocking* podria ser keyword?  es parecido a lock*
-	deprecated maybe should be a keyword
-	bad practive maybe should be a keyword
-	null maybe should be a keyword
-	until maybe should/could be a (weak) keyword
-	disables maybe should/could be a (weak) keyword
-	if (should it be a weak keyword??)
-	static maybe should be a keyword
-	error maybe should NOT be a keyword (sometimes it confuses results.. makes normal comments that talk about error objects and others to be tagged as directives)
-	warning maybe should NOT be ...  "    "
-	why is 'don't' not a keyword?
-	'no effect' o 'has no effect' podria ser keyword
-	'does nothing' podria ser keyword
-	'usually' ? quizas
-	keyword after quizas debe ser after*
-			 ejemplo: Afterward, the methods load() and save() can be used to load and store this preference store.
-	workaround
-			ejemplo: Workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=23980 : Shells without borders are not resizable on GTK.
-	'immutable' podria ser keyword
-	'side effect' podria ser keyword
-	'has/need to be' podria ser keyword
-	
-
-	should   podria no ser una directiva. al parecer hay varias frases no directivas que si tienen la palabra should
-
-	why 'Return Value Directive' (from monperrus .pdf) makes a directive from cases when we have 'returns A or null'   ,.. isn't it the same as 'resturns true or false' ?
-
-
-
-
-
-
-
 en el informe hablar de:
 	PREP DE DATOS:
-		Hablar de la conversion hecha de .xml a .csv  Herramientas existentes no funcionaron, se tuvo que hacer a la medida ("a mano") para los datos. (necesaria para el posterior analisis usando ML en Weka)
-
-		seleccion de las no-directivas, necesarias para la etapa de text mining. asi tener mismo numero de directivas, que de no-directivas, y entrenar a un algoritmo de machine learning con esos datos. Esto consistio en sacar frases de el dataset de Monperrus, que no estuvieran en el archivo con las directivas, y además, que no tuvieran ningun keyword (explicar uso de regexp). Aun asi, es posible que un comentario sea directiva y no tenga ningun keyword de Monperrus-->un chequeo manual de las frases fue necesario. Los datos eran muchos. Ademas venian en formato complicado... por ejemplo, sin IDs --> correlacionar directivas con dataset se complicó... habian muchos caracteres como tags, comillas..etc por la naturaleza de los comentarios de codigo.
-
-		Se notó que era necesario separar los comentarios por sus frases. porque las frases son destacadas como directivas (no todo el comentario). Explicar uso de regex no trivial.
-
-		Luego de un tiempo corrigiendo manualmente los comentarios, se notó que tomaba demasiado tiempo y solo una libreria estaba siendo corregida. Para mejorar los datos usados por Weka, se obtuvo una muestra randomizada (explicar xq randomizada; overfitting) de 500 comentarios de cada una de las 3 librerias, solo de metodos (decir xq solo metodos)... y solo comentarios con 3 o mas frases (los con 2 o 1 frase suelen ser no-directivas y son casos de menor interes)
-
-		en el dataset (todos los datos de monperrus) se anotaron como directivas todas las frases que tenian al menos 1 keyword (y ninguna frase de las directivas originales de Monperrus) y el resto como no-directiva. esto permite ver como destacadas de forma automatica en la pagina web las frases con keywords de monperrus (que suelen ser de verdad directivas)
 
 	WEB:
 			pagina web index.html       usó jquery-2.1.3.js y keypress.js y bootstrap    recibe un .csv y permite visualizar los comentarios.. con las frases destacadas con colores si es directiva o de otro tipo (mas tipos fueron agregados posteriormente). uso de hotkeys fue importante para facilitar el proceso un poco tedioso de navegar por varios cientos de comentarios y marcar o desmarcar con colores algunas frases.   Pagina creada para visualizar y para corregir los tipos/clases de las frases. Exporta datos en forma de texto , inicialmente procesados a mano por un script... pero automatizado posteriormente. La solucion es Web porque es mas compatible que otras soluciones.
@@ -159,41 +69,16 @@ en el informe hablar de:
 			Hablar de los intentos realizados para mejorar la visualización de las frases destacadas en la pagina web. Se intentó removiendo las comillas "" y todos los tags html (usando regexp). Luego se sacaron los tags <p> <li>
 
 
-	ML, WEKA:
-		hablar de lo que hice en API de Weka en Java.Eclipse y su potencial, que se puede hacer con eso.
-		string to word vector - intentos cambiando parametros como min-term-freq, otros tokenizers
-		analisis de nodos del arbol
-		seleccion de atributos y seleccion manual de atributos
-		comparacion de varios algoritmos, ver libro1.xlsx y resultados del Weka.Experimenter
-		intento reemplazando camelcase-words, filepaths, class paths como Java.Utils
-		intento con stopwords
-			stopwords elegidas, en base a un archivo oficial de google
-		intento con stemming
-			lovins, iterated lovins
-
 	software final:
 			explicar extraccion de comentarios de varios archivos en varias carpetas.
 			... etc (pendiente)...
-	
-	Destacacion de comentarios en Sublime Text hecho por mi. (es un ejemplo que se pueden ver de esa forma las directivas) (ver carpeta E, alli hay imagenes de ejemplo de lo que hice)
-
-	@tag.usage.general usado en eclipse con eMoose destaca y avisa de las directivas
-
-	conversion a .arff (non-sparse y sparse)
-
-	Comparar Keywords de Monperrus con nodos superiores del arbol J48.
-
-
-Trabajo Futuro:
-		Usar Machine Learning para obtener mayor conocimiento (insight) de la estructura de los datos del problema, es decir, mayor conocimiento sobre los comentarios y directivas. Este trabajo abarcó el uso de ML para predecir y clasificar comentarios, pero no abarca la obtención de mayor entendimiento sobre los datos de entrada (los comentarios).
 
 
 
 Bibliografia:
-	Incluir en bibliografia: http://www.csie.ntu.edu.tw/~cjlin/papers/guide/guide.pdf   apéndice C – (justifica el porque de usar LibLinear en Weka para datos tipo texto.
+	
 
 	Incluir , para el uso practico de liblinear: (Appendix N) http://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf
-
 
 
 
@@ -206,9 +91,6 @@ Jah Api Highlighter (JAH)
 Java Api Highlighter (JAH)
 
 
-secciones a revisar por Romain:
-
-
 
 2648-2 tiene un typpo.. corregir antes de pasar a weka!
 3511-2 y 3556-2 tiene un typpo.. corregir antes de pasar a weka! 
@@ -218,27 +100,3 @@ mejoras			q en el fut   la app lea javadoc en vez de html para mostrar los @link
 mejora 			q el usuario pueda costumizar sus keywords
 hablar de que se intento mantener consistencia al marcar frases... tratando de no hacer ejemplos contradictorios... quizas poner un ejemplo de
 		algunas consistencias q teniamos en mente con null o deprecated
-
-
-last:  al final de 5.3
-
-
-    a    b    c    d   <-- classified as
- 1000    0    0   11 |    a = non-directive
-   10   90    5    3 |    b = directive
-    2    1   94    1 |    c = semi-directive
-   26    0    0   50 |    d = null-directive
-
-    a    b   <-- classified as
- 1000   15 |    a = non-directive
-   15   85 |    b = directive
-
-recall:
-   85-100		bueno
-   70-85		regular
-   50-70		malo
-
-presicion:
-	85-100		bueno
-	70-85		regular
-	50-70		malo
