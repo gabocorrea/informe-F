@@ -1,26 +1,39 @@
-FALTA:
-	2 - correcciones de romain (3 horas)
-	5 - Resumen (1.5 horas)
-	6 - Bibliografía (2 horas)
-	7 - Conclusiones y Glosario (2 horas)
-	8 - Anexo (2 horas)
-	9 - Imprimir y anillar (2 horas)
-	10 - Revisar errores (1.5 hora)
-	---- total hasta aca: 25 horas (+4h)
-	11 - Diagrama para los casos de uso (1h)
-			TODOS:
-				1 - Revisar numeracion automatica de las tablas e imagenes
+LAST:
+	
 
+econo sillas
 
 TODO:
-	en 3.1, escribi un caso de uso donde se puede exportar de la web a Documentacion API corregida que destaca directivas.
-			...pero esto no está implementado ni mencionado en otra parte del informe. Mencionar el diseño optimo en otra parte
-			del informe.
+	user-modifications should be unique for each project, not global, like it is now.
+	id 0 should not exist, in any file.... to do this, modify corresponding .py files, and index.html
+	loading bar
+
+tip :: [EXEC] on [Windows]
+	Finally a simple way to get exec working w/o launching a black box window.
+	just do: exec('start /B "window_name" "path to your exe"',$output,$return);
+	The important part is the /B which makes it run in the background.
+
+pago-pame:	150+60
+G.comunes		25.000
+agua 			9.200
+gas 			17.850
+electr			17.500
+internt			22.900
+Lider			57.500
+_____________
+TOTAL			149.950
+
+katzemuller?
+sergiocorrea@tie.cl
 
 
+480 B
+199 B?
 
-150Largo,46Ancho,182Alto (cm)
-155+20(g.comunes)+30(deuda)+30(cuentas)=235
+
+TEXT MINING APLICADO A DOCUMENTACIÓN DE API PARA LA DETECCIÓN DE DIRECTIVAS
+
+
 
 todo's:
 	add min num lines in comment to consider it .. to 1_...py script   (que sea 4 o mas lineas)
@@ -41,62 +54,38 @@ PARTES PENDIENTES DEL DESARROLLO
 	1.2)*	(asignar cada comentario a su archivo,clase,posicion dentro de archivo, etc)
 2)	Revision Manual en pagina web
 	2.?)*	Elección de tipos o clases de comentarios (ej. directive, non-directive, null-directive)
+	7
+
+
+projects
+	<name01>
+	<name02>
+		<original-folders-and-files>
+		CHi-files
+			project.csv
+			project-export.csv
+			project-export.arff
+			user-modifications.csv
+	<name03>
+
+
+Detalles de implementación:
+* Al crear un proyecto, subiendo una carpeta, el proyecto es guardado con el nombre de esa carpeta.
+* Al crear un proyecto, y sin recargar la página o cerrar el browser, se pueden descargar solo los comentarios de los archivos de codigo fuente del proyecto creado.
+* Al exportar un proyecto, se descarga un archivo .csv con el nombre del proyecto.
+
+
+Fearies wear boots
+Carry on my wayward son
+Hotel California
+Born to be wild
+Oh Darling
+Smoke on the water
+
+You give love a bad name
+Come Together
 
 
 
-
-
-
-
-
-
-
-IDs:
-Eclipse JFace: 		87 - 7319
-Apache Commons:   	7324 - 10404
-Java:				10405 - 20575    
-
-
-
-en el informe hablar de:
-	PREP DE DATOS:
-
-	WEB:
-			pagina web index.html       usó jquery-2.1.3.js y keypress.js y bootstrap    recibe un .csv y permite visualizar los comentarios.. con las frases destacadas con colores si es directiva o de otro tipo (mas tipos fueron agregados posteriormente). uso de hotkeys fue importante para facilitar el proceso un poco tedioso de navegar por varios cientos de comentarios y marcar o desmarcar con colores algunas frases.   Pagina creada para visualizar y para corregir los tipos/clases de las frases. Exporta datos en forma de texto , inicialmente procesados a mano por un script... pero automatizado posteriormente. La solucion es Web porque es mas compatible que otras soluciones.
-
-			hablar algo de script que procesa output de la web 3_process_web_output.py
-
-			Hablar de los intentos realizados para mejorar la visualización de las frases destacadas en la pagina web. Se intentó removiendo las comillas "" y todos los tags html (usando regexp). Luego se sacaron los tags <p> <li>
-
-
-	software final:
-			explicar extraccion de comentarios de varios archivos en varias carpetas.
-			... etc (pendiente)...
-
-
-
-Bibliografia:
-	
-
-	Incluir , para el uso practico de liblinear: (Appendix N) http://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf
-
-
-
-
-
-
-Comment Classifier
-Comments Highlighter (CHI o CHi)
-Jah Api Highlighter (JAH)
-Java Api Highlighter (JAH)
-
-
-
-2648-2 tiene un typpo.. corregir antes de pasar a weka!
-3511-2 y 3556-2 tiene un typpo.. corregir antes de pasar a weka! 
-3167-3 es un ejemplo de semi-directive (es un consejo)
-
-mejoras			q en el fut   la app lea javadoc en vez de html para mostrar los @link
-mejora 			q el usuario pueda costumizar sus keywords
-hablar de que se intento mantener consistencia al marcar frases... tratando de no hacer ejemplos contradictorios... quizas poner un ejemplo de
-		algunas consistencias q teniamos en mente con null o deprecated
+Orden de compra 100000641
+	En caso de requerir devoluciones o reembolsos favor de contactar al mail info@econosillas.cl
